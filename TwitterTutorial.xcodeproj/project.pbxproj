@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31999DA727DD06EE00958A87 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31999DA627DD06EE00958A87 /* AuthService.swift */; };
+		31999DA927DDABE100958A87 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31999DA827DDABE100958A87 /* UserService.swift */; };
+		31999DAC27DDBD7600958A87 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31999DAB27DDBD7600958A87 /* User.swift */; };
 		31EE748127DA358D00B4D285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE748027DA358D00B4D285 /* AppDelegate.swift */; };
 		31EE748327DA358D00B4D285 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EE748227DA358D00B4D285 /* SceneDelegate.swift */; };
 		31EE748827DA358D00B4D285 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31EE748627DA358D00B4D285 /* Main.storyboard */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		31999DA627DD06EE00958A87 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		31999DA827DDABE100958A87 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		31999DAB27DDBD7600958A87 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		31EE747D27DA358D00B4D285 /* TwitterTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31EE748027DA358D00B4D285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31EE748227DA358D00B4D285 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		31999DAA27DDBD6700958A87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31999DAB27DDBD7600958A87 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		31EE747427DA358D00B4D285 = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +107,7 @@
 		31EE747F27DA358D00B4D285 /* TwitterTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				31999DAA27DDBD6700958A87 /* Model */,
 				31EE749927DA35FA00B4D285 /* View */,
 				31EE749827DA35F800B4D285 /* ViewModel */,
 				31EE749727DA35F500B4D285 /* Controller */,
@@ -126,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				31999DA627DD06EE00958A87 /* AuthService.swift */,
+				31999DA827DDABE100958A87 /* UserService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -295,6 +309,7 @@
 				31EE74A727DB9A8700B4D285 /* Extensions.swift in Sources */,
 				31EE74A327DA3A4200B4D285 /* ConversationsController.swift in Sources */,
 				31EE748127DA358D00B4D285 /* AppDelegate.swift in Sources */,
+				31999DAC27DDBD7600958A87 /* User.swift in Sources */,
 				31EE749F27DA3A0F00B4D285 /* ExploreController.swift in Sources */,
 				31EE74AA27DBA46000B4D285 /* LoginController.swift in Sources */,
 				31EE74AE27DBAD1900B4D285 /* Utilities.swift in Sources */,
@@ -302,6 +317,7 @@
 				31EE74AC27DBA4E700B4D285 /* RegistrationController.swift in Sources */,
 				31EE748327DA358D00B4D285 /* SceneDelegate.swift in Sources */,
 				31EE749B27DA36D100B4D285 /* MainTabController.swift in Sources */,
+				31999DA927DDABE100958A87 /* UserService.swift in Sources */,
 				31EE749D27DA39BB00B4D285 /* FeedController.swift in Sources */,
 				31EE74A527DB8ECD00B4D285 /* Contents.swift in Sources */,
 				31999DA727DD06EE00958A87 /* AuthService.swift in Sources */,
