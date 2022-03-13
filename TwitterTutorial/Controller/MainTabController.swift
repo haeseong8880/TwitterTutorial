@@ -43,7 +43,9 @@ class MainTabController: UITabBarController {
     //MARK: - API
     
     func fetchUser() {
-        UserService.shared.fetchUser { user in
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+        UserService.shared.fetchUser(uid: uid) { user in
             self.user = user
         }
     }
@@ -73,7 +75,11 @@ class MainTabController: UITabBarController {
     
     // MARK: - Selectors
     @objc func actionButtonTapped(){
-        print("11111111")
+        guard let user = user else { return }
+        let controller = UploadTweetController(user: user)
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion: nil)
     }
     
     // MARK: - Helpers
@@ -86,8 +92,7 @@ class MainTabController: UITabBarController {
     }
     
     func configureViewControllers(){
-        
-        let feed = templateNavigationController(image: UIImage(named: Contents.BottomSheetIcon.homeUnselected)!, rootViewController: FeedController())
+        let feed = templateNavigationController(image: UIImage(named: Contents.BottomSheetIcon.homeUnselected)!, rootViewController: FeedController(collectionViewLayout: UICollectionViewFlowLayout()))
         let explore = templateNavigationController(image: UIImage(named: Contents.BottomSheetIcon.searchUnselected)!, rootViewController: ExploreController())
         let notifications = templateNavigationController(image: UIImage(named: Contents.BottomSheetIcon.likeUnselected)!, rootViewController: NotificationsController())
         let conversations = templateNavigationController(image: UIImage(named: Contents.BottomSheetIcon.mailUnselected)!, rootViewController: ConversationsController())
