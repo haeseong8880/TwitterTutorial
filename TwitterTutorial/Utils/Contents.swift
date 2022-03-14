@@ -5,6 +5,8 @@
 //  Created by haeseongJung on 2022/03/11.
 //
 
+import UIKit
+
 struct Contents {
     
     static let twitterLogoBlue = "twitter_logo_blue"
@@ -22,5 +24,11 @@ struct Contents {
         static let password = "Password"
         static let fullname = "Full Name"
         static let username = "User name"
+    }
+    struct TweetCell {
+        static let comment = "comment"
+        static let retweet = "retweet"
+        static let like = "like"
+        static let share = "share"
     }
 }

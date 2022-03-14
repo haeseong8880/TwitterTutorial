@@ -38,7 +38,7 @@ class FeedController: UICollectionViewController {
             self.tweets = tweets
         }
     }
-
+    
     // MARK: - Helpers
     
     func configureUI() {
@@ -50,7 +50,7 @@ class FeedController: UICollectionViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.setDimensions(width: 44, height: 44)
         navigationItem.titleView = imageView
-
+        
     }
     
     func configureLeftBarButton() {
@@ -60,7 +60,7 @@ class FeedController: UICollectionViewController {
         profileImageView.setDimensions(width: 32, height: 32)
         profileImageView.layer.cornerRadius = 32 / 2
         profileImageView.layer.masksToBounds = true
-
+        
         profileImageView.sd_setImage(with: user.profileImageUrl, completed: nil)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: profileImageView)
@@ -77,9 +77,14 @@ extension FeedController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TweetCell
         
+        cell.delegate = self
         cell.tweet = tweets[indexPath.row]
         
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
 }
 
@@ -88,5 +93,14 @@ extension FeedController {
 extension FeedController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 120)
+    }
+}
+
+// MARK: - TweetCellDelegate
+
+extension FeedController: TweetCellDelegate {
+    func handleProfileImageTapped() {
+        let controller = ProfileController(collectionViewLayout: UICollectionViewFlowLayout())
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
